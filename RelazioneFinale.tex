@@ -1,0 +1,119 @@
+\documentclass[a4paper,11pt,twoside,openright]{report}
+
+
+% ********* PACCHETTI *********
+\usepackage[T1]{fontenc}	% codifica dei font in uscita
+\usepackage[utf8]{inputenc} % codifica dei font in uscita
+\usepackage[italian]{babel} % lingua del documento
+\usepackage{graphicx}		% inserimento di immagini
+\graphicspath{{images/}{../images/}}
+
+\usepackage{fancyhdr}		% personalizzare lo stile della pagina
+\usepackage{subfiles} % permette l'uso di più file tex
+\usepackage{lipsum}			% testo casuale di riempimento
+\usepackage{listings}		% per inserire codice
+\usepackage[colorlinks=true,%
+			linkcolor=black,
+            urlcolor=blue,
+            citecolor=black]{hyperref}		% uso di link interni al documento
+\usepackage{color}			% uso di colori base
+\usepackage{xcolor}			% uso di colori avanzati
+\usepackage[many]{tcolorbox}		% creare riquadri personalizzati
+\usepackage[nonumberlist,toc]{glossaries}		% uso del glossario
+\usepackage[nottoc]{tocbibind}	% aggiungere la bibliografia alla TOC
+\usepackage{emptypage}
+%\usepackage{biblatex}
+%\usepackage{natbib}
+
+% ********* IMPOSTAZIONI *********
+
+% profondita della TOC
+\setcounter{secnumdepth}{3}
+
+% definire C#
+\newcommand{\Csharp}{%
+  {\settoheight{\dimen0}{C}C\kern-.05em \resizebox{!}{\dimen0}{\raisebox{\depth}{\#}}}}
+  
+% definire batch
+\lstdefinestyle{batch}{
+    language={[WinXP]command.com},
+    commentstyle=\color{bat-comm},
+    keywordstyle=\color{bat-kw},
+    keywords=[2]{@},
+    keywords=[3]{\%1,\%~2,\%3,\%4, \%params\%, \%url\%, \%redirect\%},
+    keywords=[4]{curl},
+    keywordstyle=[2]\color{bat-at},
+    keywordstyle=[3]\color{bat-str},
+    keywordstyle=[4]\color{bat-cmd} 
+}
+
+% definire Javascript
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+
+\pagestyle{headings}
+% ************ END ***************
+
+\makeglossaries				% alla compilazione crea il file .glo
+\input{utils/Glossario}		% inlude nel documneto tutti i termini del glossario
+
+\begin{document}
+
+	\input{layout/frontespizio}
+	\clearpage
+	\input{layout/colophon}
+	\clearpage
+	\input{utils/Dedica}
+
+
+	\setcounter{page}{1}
+	\pagenumbering{roman}
+	
+	\input{utils/Sommario}
+
+	\input{utils/Ringraziamenti}
+	
+	\tableofcontents
+	\addcontentsline{toc}{chapter}{Indice}
+	
+	\listoffigures
+	
+	%\listoftables
+	
+
+	\cleardoublepage
+	\pagenumbering{arabic}
+
+	\subfile{sections/Introduzione}
+	\subfile{sections/Requisiti}
+	\subfile{sections/Tecnologie}
+	\subfile{sections/Architettura}
+	\subfile{sections/Dettagli}
+	\subfile{sections/Conclusioni}
+	
+	% --- BIBLIOGRAFIA ---
+	\nocite{*}		
+	\bibliographystyle{plain}
+	\bibliography{Bibliografia}	
+	
+	% --- GLOSSARIO ---
+	\glsaddall
+	\printglossary
+	
+	\label{LastPage}
+	
+
+\end{document}

@@ -1,0 +1,235 @@
+\documentclass[../RelazioneFinale.tex]{subfiles}
+
+\begin{document}
+
+	\chapter{Tecnologie adottate}
+	\label{cap:Tecnologie}
+	
+		\section{Parte Client}
+		
+			\subsection{Linguaggi}
+				Il linguaggio usato per realizzare la parte client del sistema Updater è il \Csharp. Il \Csharp\ è un linguaggio di programmazione orientato agli oggetti puro, sviluppato da Microsoft all'interno dell'iniziativa .NET. 
+				Nel 2001 è divenuto standard ECMA e successivamente, nel 2003, anche standard ISO (ISO/IEC 23270).
+				
+				L'utilizzo di questo linguaggio è stato espressamente richiesto dal committente, l'azienda è infatti in possesso delle licenze per l'utilizzo di tutte le tecnologie Microsoft per scopi commerciali.
+				
+			\subsection{Tecnologie esterne}			
+			\subsubsection{.NET Framework}
+				.NET è il framework che accompagna il linguaggio \Csharp\ e altri linguaggi. Gestisce l'ambiente di esecuzione, il Common Language Runtime (CLR), in cui vengono eseguiti i programmi precompilati in un linguaggio intermedio. Inoltre mantiene una libreria di classi utilizzabili nelle proprie applicazioni e numerose altre tecnologie.
+				\begin{description}
+					\item[Versione utilizzata:] 4.5.1
+				\end{description}
+			
+			\subsubsection{Windows Presentation Foundation - WPF}
+				Windows Presentation Foundation è una tecnologia all'interno del .NET Framework. Essa offre la base operativa per l'esecuzione di applicazioni Windows con interfaccia grafica e riesce a rendere l'interfaccia grafica il più possibile indipendente dal codice logico. Per costruire un'interfaccia grafica infatti si utilizza un linguaggio ad hoc: l'Extensible Application Markup Language (XAML) un linguaggio di markup basato su XML che permette la costruzione di interfacce grafiche senza la conoscenza di un linguaggio di programmazione.
+				\begin{description}
+					\item[Versione utilizzata] \ \par 
+					4.5.1
+					\item[Applicazione] \ \par
+					Viene utilizzato per la creazione del programma Updater e per le componenti grafiche;
+					\item[Vantaggi] \ \par
+					Rende facile la divisione tra parte grafica e parte logica grazie all'uso del meccanismo di \emph{data-binding};
+					\item[Svantaggi] \ \par
+					Richiede l'apprendimento di un nuovo linguaggio con una curva di apprendimento bassa;
+				\end{description}		
+			
+			\subsubsection{Catel}
+				Piattaforma di sviluppo di applicazioni che vogliono seguire il pattern Model View ViewModel (MVVM) e Model View Controller (MVC). Essa racchiude una serie di classi e funzionalità che facilitano l'implementazione dei pattern architetturali.
+				\begin{description}
+					\item[Versione utilizzata] \ \par 
+					4.4.0
+					\item[Applicazione] \ \par
+					Sono sfruttate alcune classi base di Catel e attributi speciali per implementare il pattern MVVM nel programma Updater e per utilizzare la serializzazione su file XML eseguita dalle componenti della Libreria Updater;
+					\item[Vantaggi] \ \par
+					Riduzione del codice scritto con conseguente riduzione di possibili errori;
+					\item[Svantaggi] \ \par
+					Aumento della complessità dell'intero sistema.
+				\end{description}
+			
+			\subsubsection{Command Line Parser}
+				Libreria semplice ed efficace per la manipolazione di argomenti per comandi da terminale e le relative attività. Essa offre un parser di comandi da terminale integrato.
+				\begin{description}
+					\item[Versione utilizzata] \ \par 
+					1.9.71.2 
+					\item[Applicazione] \ \par
+					La libreria garantisce all'avvio dell'applicazione di leggere e interpretare eventuali operazioni pendenti dopo la sua chiusura. In particolare è utilizzata per gestire l'installazione di prodotti software che necessitano i permessi di amministratore e quindi il riavvio del programma;
+					\item[Vantaggi] \ \par
+					Semplice da usare ed efficace;
+					\item[Svantaggi] \ \par
+					Poca documentazione disponibile.
+				\end{description}
+			
+			\subsubsection{MahApps.Metro}
+				MahsApps.Metro è un insieme di componenti grafiche per WPF che seguono il design \emph{modern UI}, conosciuto anche come \emph{Metro}, creato da Microsoft.
+				\begin{description}
+					\item[Versione utilizzata] \ \par 
+					1.2.4
+					\item[Applicazione] \ \par
+					Viene utilizzato per far apparire la finestra principale del programma con il design moderno di oggi;
+					\item[Vantaggi] \ \par
+					Fornisce un insieme di componenti grafici dal design moderno già creati;
+				\end{description}
+			
+			\subsubsection{WPF NotifyIcon}
+				Implementazione di una icona nella taskbar del sistema operativo windows per WPF che fornisce la possibilità di mostrare avvisi \emph{baloon}, popup e context menu.
+				\begin{description}
+					\item[Versione utilizzata] \ \par 
+					1.0.8
+					\item[Applicazione] \ \par
+					Creare la notifyicon del programma Updater consentendo al programma di comunicare all'utente anche se in background;
+					\item[Vantaggi] \ \par
+					Fornisce componenti grafici già creati e facili da riutilizzare;
+				\end{description}
+			
+			\subsection{Tecnologie interne}
+			In questa sezione si elencano le tecnologie offerte all'interno dell'azienda, ossia librerie di componenti comuni.
+		
+			\subsubsection{Salvagnini UI Catel Controls}
+				\begin{description}
+					\item[Applicazione] \ \par 
+					Le componenti offerte hanno facilitato l'implementazione del pattern Model View Viewmodel tramite l'uso dell'ereditarietà nelle nuove componenti definite;
+					\item[Vantaggi] \ \par
+					Riuso di componenti già definite e risparmio di codice;
+					\item[Svantaggi] \ \par 
+					Nuova dipendenza del codice sviluppato.
+				\end{description}
+			
+			\subsubsection{Salvagnini UI Controls}
+				\begin{description}
+					\item[Applicazione] \ \par 
+					Uso di alcune componenti grafiche già definite in XAML per la costruzione della finestra principale e della schermata delle impostazioni;
+					\item[Vantaggi] \ \par 
+					Riuso di componenti già definite;
+					\item[Svantaggi] \ \par
+					Nuova dipendenza del codice sviluppato.
+				\end{description}
+
+\newpage % -----------------------------------------------			
+		
+		\section{Parte Server}
+		
+			\subsection{Linguaggi}
+				Per la creazione del sistema REST si sono utilizzati ancora il linguaggio \Csharp\ e l'ambiente .NET. Mentre per le creazione del sito web si sono utilizzati i linguaggi affermati nello sviluppo di applicazioni web quali HTML5, CSS e Javascript.
+			
+			\subsection{Tecnologie esterne}
+			
+			\subsubsection{ASP.NET Web API}
+				ASP.NET è un web framework open source per costruire applicazioni web e servizi web. Esso permette in modo rapido e semplice la costruzione di un servizio REST.
+				\begin{description}
+					\item[Versione utilizzata] \ \par 
+					2.2
+					\item[Applicazione] \ \par
+					Creare il servizio REST per comunicare i dati attraverso la rete Internet;
+					\item[Vantaggi] \ \par
+					Framework appartenente all'insieme .NET che permette in modo veloce e semplice di costruirsi una propria Web API basandosi sul pattern MVC;
+					\item[Svantaggi] \ \par
+					Troppo vincolato al framework .NET e alle tecnologie Microsoft.
+				\end{description}
+			
+			\subsubsection{Entity Framework}
+				Framework Object reletional mapping (ORM) all'interno delle tecnologie di .NET. Esso consente di creare una comunicazione automatica tra una base di dati relazionale e un programma orientato agli oggetti.
+				\begin{description}
+					\item[Versione utilizzata] \ \par 
+					5
+					\item[Applicazione] \ \par
+					Creazione delle componenti che rappresentano sotto forma di oggetti le informazioni all'interno della base di dati;
+					\item[Vantaggi] \ \par
+					Modello già creato per la comunicazione con la base di dati. Recupero delle informazioni nella base di dati attraverso l'uso di programmazione funzionale usando Linq invece di SQL;
+					\item[Svantaggi] \ \par
+					Inefficiente per basi di dati enormi.
+				\end{description}
+				
+			\subsubsection{Devart Entity Developer}
+				Designer automatico per la creazione di modelli Entity Framework ORM a partire dalla definizione della base di dati in SQL o viceversa.
+				\begin{description}
+					\item[Versione utilizzata] \ \par 
+					6.0.11
+					\item[Applicazione] \ \par
+					Costruzione automatica delle componenti Entity Framework;
+					\item[Vantaggi] \ \par
+					Automatizzazione per la codifica di numerose classi;
+					\item[Svantaggi] \ \par
+					Strumento a pagamento.
+				\end{description}
+				
+			\subsubsection{Internet Information Server}
+				L'Internet Information Server è un insieme di servizi server internet per sistemi operativi Windows, creato dalla Microsoft
+				\begin{description}
+					\item[Versione utilizzata] \ \par 
+					8.0
+					\item[Applicazione] \ \par
+					Ospita il database, l'esecuzione della Web API e il sito web;
+					\item[Vantaggi] \ \par
+					Completamente integrato nella piattaforma di sviluppo Visual Studio e facilmente configurabile;
+					\item[Svantaggi] \ \par
+					Sistema a pagamento supportato solo su sistemi operativi Windows.
+				\end{description}
+			
+			
+			\subsubsection{PostgreSQL}
+				PostgreSQL è un database management system (DBMS) ossia un sistema software progettato per la creazione e manipolazione e l'interrogazione di una base di dati di tipo relazionale basato sul linguaggio SQL.
+				\begin{description}
+					\item[Versione utilizzata] \ \par 
+					9.5.4
+					\item[Applicazione] \ \par
+					Utilizzato per la creazione e gestione della base di dati necessaria per l'intero sistema Updater;
+					\item[Vantaggi] \ \par
+					Potente DBMS che supporta quasi la totalità dei costrutti SQL ed è Open Source;
+				\end{description}
+			
+			\subsubsection{PowerShell}
+				Linguaggio di scripting dell'omonimo terminale disponibile nei sistemi operativi Windows, sviluppato da Microsoft. Basato sulla programmazione ad oggetti e sul framework .NET.
+				\begin{description}
+					\item[Versione utilizzata] \ \par
+					5
+					\item[Applicazione] \ \par
+					Creazione dello script che mette in relazione il sistema di Continuos Integration aziendale con il sistema Updater;
+					\item[Vantaggi]
+					Linguaggio di scripting che può usufruire di tutte le potenti librerie offerte da .NET;
+					\item[Svantaggi]
+					Opera solo in ambiente con sistema operativo Windows.
+				\end{description}
+				
+			\subsubsection{Bootstrap}
+				Framework per lo sviluppo di siti web responsive e mobile-first. Esso offre un insieme di componenti per il web create con HTML, CSS e Javascript.	
+			\begin{description}
+				\item[Versione utilizzata] \ \par
+				3.3.7
+				\item[Applicazione] \ \par
+				Costruzione del sito web amministrativo della base di dati;
+				\item[Vantaggi] \ \par
+				Permette la creazione di un sito web responsive dal design moderno in pochissimo tempo;
+				\item[Svantaggi] \ \par
+				Appesantisce il sito web, molte componenti non utilizzate sono comunque comprese.
+			\end{description}
+			
+			
+			\subsubsection{JQuery}
+				Libreria Javascript che ne estende le funzionalità. Essa fornisce una  facile manipolazione di una pagina HTML, fornisce la possibilità di creare animazioni, inoltre fornisce potenti strumenti per utilizzare la tecnica Asynchronous JavaScript and XML (AJAX).		
+			\begin{description}
+				\item[Versione utilizzata] \ \par
+				3.0.0
+				\item[Applicazione] \ \par
+				Utilizzata per eseguire le richieste HTTP con la tecnica AJAX e manipolare gli elementi delle pagine web;
+				\item[Vantaggi] \ \par
+				Semplifica l'invio di richieste HTTP e la manipolazione delle pagine web usando Javascript. Documentazione eccellente;
+				\item[Svantaggi] \ \par
+				Molto spesso alcune funzioni non sono supportate in tutti i Browser.
+			\end{description}
+			
+			
+			\subsubsection{KnockoutJs}
+				Libreria Javascript che semplifica l'implementazione del pattern MVVM in una pagina web.
+			\begin{description}
+				\item[Versione utilizzata] \ \par
+				3.4.0
+				\item[Applicazione] \ \par
+				Utilizzata per l'implementazione del data binding tra parte grafica di una pagina web e la sua parte logica;
+				\item[Vantaggi] \ \par
+				Libreria open source che permette facilmente il data binding tra elementi HTML (parte grafica) e oggetti Javascript (parte logica);
+				\item[Svantaggi] \ \par
+				La libreria non forza gli sviluppatori a seguire una struttura ben organizzata del codice Javascript prodotto.
+			\end{description}
+		
+
+\end{document}

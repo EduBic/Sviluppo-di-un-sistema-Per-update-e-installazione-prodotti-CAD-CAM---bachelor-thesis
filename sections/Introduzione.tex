@@ -1,0 +1,40 @@
+\documentclass[../RelazioneFinale.tex]{subfiles}
+
+\begin{document}
+
+	\chapter{Introduzione}
+	
+		\paragraph*{}
+		Il progetto richiesto getta le basi per la creazione di un forte sistema di \emph{continuos delivery} per i prodotti software sviluppati dall'azienda.
+		
+		Lo sviluppo di programmi software CAD/CAM richiede la gestione di un ambiente di sviluppo molto complesso e in continua evoluzione per bugfix e per aggiunte di nuove funzionalità richieste esplicitamente dai clienti aziendali nonché utenti e fruitori di tali programmi.	
+		 Il rilascio di software gestito manualmente presenta sempre numerosi svantaggi tanto da essere addirittura definito un antipattern\footnote{ \cite{humble2010continuous} \emph{J. Humble and D. Farley. Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation}, cap. 1, pag. 5.}. Gli svantaggi sono:
+		\begin{itemize}
+			\item Un ciclo di vita, ossia il tempo che intercorre tra la decisione di un cambiamento nel software e la consegna di esso all'utente finale, molto lungo;
+			\item Costi molto elevati per il rilascio del prodotto software;
+			\item Una complessa gestione manuale di un insieme di processi con un alto tasso di errore, soprattutto se questi non vengono seguiti pedissequamente o peggio se non sono definiti;
+			\item Un dispendioso utilizzo di risorse e tempo. 
+		\end{itemize} 
+		
+		Per un azienda che distribuisce software quindi risulta necessario un meccanismo di \emph{continuos delivery}, una distribuzione dei propri software in modo \textbf{completamente automatizzato} rendendo così il rilascio un processo veloce e ripetibile.
+		
+		\paragraph*{}
+		Il sistema che verrà presentato nel presente documento forma quella che diventerà la base per la distribuzione dei prodotti aziendali. In particolare offrirà:
+		\begin{itemize}
+			\item Un modo semplice per usufruire dei prodotti aziendali e dei loro aggiornamenti, garantendo che l'utente finale possa sempre restare al passo con i cambiamenti dei programmi installati;
+			\item Le basi per un'automazione della distribuzione del software, garantendo \textbf{risparmio sul personale} e \textbf{velocizzazione dei tempi di rilascio};
+			\item Un controllo più veloce e completo per la distribuzione del proprio software e delle licenze d'uso.
+		\end{itemize}
+		Il sistema nasce già suddiviso in due parti, una parte client ed una server. La parte client sarà responsabile di offrire le operazioni all'utente grazie ai dati distribuiti dalla parte server la quale gestirà i dati dei prodotti software e sarà collegata al sistema di \emph{continuos integration} aziendale.				
+		In questo modo il processo di distribuzione sarà il più possibile automatizzato. Il sistema di \emph{continuos integration} garantirà l'output di un programma installabile ed eseguibile, questo verrà caricato nel database gestito dalla parte server e in automatico verrà distribuito a tutti gli utenti che usufruiscono della parte client.
+		
+		\section{Organizzazione del documento}
+			Il documento si prefigge principalmente di essere una guida per la costruzione di tale sistema, adotta quindi un approccio abbastanza generico. Il contenuto principale presentato è l'architettura ad alto livello la quale è svincolata dalla presentazione di tutti i dettagli implementativi. Di questi infatti se ne occupa una parte secondaria di approfondimento che presenta quelli più significativi e quelli ritenuti più interessanti. 
+		\begin{itemize}
+			\item Il capitolo \ref{cap:Requisiti} mette in evidenza le funzionalità da implementare attraverso l'elenco dei requisiti;
+			\item Il capitolo \ref{cap:Tecnologie} presenta l'elenco delle tecnologie coinvolte nello sviluppo del sistema;
+			\item Il capitolo \ref{cap:Architettura} presenta l'architettura ad alto livello che lega ogni macro componente che va a formare il sistema prefiggendosi l'obiettivo di aiutare il lettore a comprendere il sistema già creato o a implementarne uno nuovo;
+			\item Il capitolo \ref{cap:Dettagli} invece racchiude una serie di sezioni di approfondimento per entrare, dove ritenuto più utile, nei dettagli dell'implementazione del sistema.
+		\end{itemize}					
+
+\end{document}

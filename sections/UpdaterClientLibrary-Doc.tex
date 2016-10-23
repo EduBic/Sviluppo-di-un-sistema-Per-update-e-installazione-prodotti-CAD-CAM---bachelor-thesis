@@ -1,0 +1,148 @@
+\section{Updater Client Library - Documentazione}
+		\label{sec:UpdaterClientLibrary}
+		
+			\subsection{Introduzione}
+			
+			
+			\subsection{Componenti}
+			
+				\subsubsection{Indice componenti}
+				
+				\begin{tabular}{lc}
+					nome classe & pagina \\
+					MyClass & \pageref{MyClass} \\
+					\verb|UpdaterService| & \pageref{} \\
+					\verb|ProductWrapper| & \pageref{} \\
+					\verb|PrerequisiteWrapper| & \pageref{} \\
+					\verb|AutomaticUpdatesController| & \pageref{} \\
+					\verb|AutomaticUpdatesInstaller| & \pageref{} \\
+					\verb|AutomaticUpdatesCheckerAndDownloader| & \pageref{} \\
+					\verb|AppRestarter| & \pageref{} \\
+					\verb|Models::ObjectManager| & \pageref{} \\
+				
+				\end{tabular}
+				
+				\subsubsection{ProductWrapper}
+
+					\begin{figure}
+						%\includegraphics[scale=•]{•}
+					\end{figure}									
+				
+					\paragraph{Responsabilità}
+					
+					\paragraph{Descrizione metodi} \ \par
+					
+						%\hspace{4cm}
+						
+						\begin{lstlisting}
+ main(stringa : string, secondo : Tipo) : void
+						\end{lstlisting}
+						Bla blas bla 
+						
+						\begin{lstlisting}
+ void main2(VarArgs...args)
+						\end{lstlisting}
+				
+					
+				\subsubsection{PrerequisiteWrapper}
+				
+					%\begin{figure}
+						%\includegraphics[scale=•]{•}
+					%\end{figure}								
+				
+					\paragraph{Responsabilità}
+					
+					\paragraph{Descrizione metodi} \ \par
+					
+						
+						\begin{lstlisting}
+ main(stringa : string, secondo : Tipo) : void
+						\end{lstlisting}
+						Bla blas bla 
+						
+						\begin{lstlisting}
+ void main2(VarArgs...args)
+						\end{lstlisting}
+	
+		\paragraph*{}
+		\label{MyClass}
+		\begin{tcolorbox}[fonttitle=\bfseries, 
+								adjusted title={\Large MyClass}, 
+								breakable, 
+								sharp corners=south,
+								colback=white, 
+								colframe=white!60!black]
+								
+				\begin{description}%[leftmargin=0.7cm,labelwidth=!]
+				
+					\item[Responsabilità] \ \par 
+        				asnfogandgonadonfkln fjsdnf kans njsdf nkajsnf 
+        				
+        			\tcbline 
+        				
+        			\item[Descrizione metodi] \ \par
+        				
+        				\begin{lstlisting}
+ main(stringa : string, secondo : Tipo) : void
+						\end{lstlisting}
+						Bla blas bla 
+						
+						\begin{lstlisting}
+ void main2(VarArgs...args)
+						\end{lstlisting}
+        				
+				\end{description}  
+				
+			\end{tcolorbox}	
+	
+		\paragraph*{}
+		\label{AppRestarter}
+		\begin{tcolorbox}[fonttitle=\bfseries, 
+								adjusted title={\Large AppRestarter}, 
+								breakable, 
+								sharp corners=south,
+								colback=white, 
+								colframe=white!60!black]
+								
+				\begin{description}%[leftmargin=0.7cm,labelwidth=!]
+				
+					\item[Responsabilità] \ \par 
+        				Gestire la funzionalità di riavvio dell'applicazione come amministratore per le operazioni:
+        				\begin{itemize}
+        					\item Aggiornamenti;
+        					\item Installazioni;
+        					\item Operazioni automatiche in background.
+        				\end{itemize}
+        			\tcbline 
+        				
+        			\item[Descrizione metodi] \ \par
+        				
+        				\begin{lstlisting}
+public AppRestarter()
+						\end{lstlisting}
+						Costruttore della classe.
+						
+						\begin{lstlisting}
+bool IsAppRunningAsAdministrator()
+						\end{lstlisting}
+						Metodo per conoscere se l'applicazione è già in esecuzione con i permessi d'amministratore.
+						
+						\begin{lstlisting}
+void RestartAppAsAdminForUpdate(long idProduct)
+						\end{lstlisting}
+						Metodo per riavviare l'applicazione con i permessi d'amministratore gestendo gli aggiornamenti del prodotto software indicato nel parametro \verb|idProduct|.  
+						
+						\begin{lstlisting}
+void RestartAppAsAdminForInstall(long idProduct)
+						\end{lstlisting}
+						Metodo per riavviare l'applicazione con i permessi d'amministratore gestendo l'installazione del prodotto software indicato nel parametro \verb|idProduct|.  	
+						
+						\begin{lstlisting}
+void RestartAppAsAdminForBackgroundOperation
+			    (long idProduct)
+						\end{lstlisting}
+						Metodo per riavviare l'applicazione con i permessi d'amministratore gestendo operazioni in background (download, installazione e aggioramento) del prodotto software indicato nel parametro \verb|idProduct|.  					
+        				
+				\end{description}  
+				
+			\end{tcolorbox}	

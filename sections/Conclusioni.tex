@@ -1,0 +1,24 @@
+\documentclass[../RelazioneFinale.tex]{subfiles}
+
+\begin{document}
+
+	\chapter{Conclusioni}
+		Tutti i requisiti sono stati soddisfatti. Il sistema sviluppato offre tutte le funzionalità base per poter garantire la distribuzione dei prodotti software ai clienti e quindi soddisfa l'obiettivo principale. Nonostante il risultato positivo raggiunto il sistema è da ritenersi ancora come un \textbf{sistema software immaturo} per un rilascio ufficiale esterno all'azienda. Infatti sono quantomeno necessari ulteriori rifinimenti.
+	
+		\section{Futuri sviluppi}
+			Il progetto sviluppato nonostante soddisfi tutti i requisiti individuati e richiesti è ancora lontano dalla consegna all'utente finale. I punti su cui ancora bisogna lavorare sono:
+			\begin{itemize}
+				\item \textbf{Configurazione di una macchina server} all'interno dell'azienda. La quale deve saper sopportare un carico di trasmissione ancora oggi sconosciuto e non considerato poiché si è sempre lavorato in un ambiente di sviluppo virtuale.
+				\item \textbf{Rafforzare il livello di sicurezza} del servizio REST. Ad oggi i dati trasmessi non sono sensibili ma ulteriori estensioni, come per esempio la distribuzione di licenze, richiederanno un livello di sicurezza molto più alto e pensato.
+				\item \textbf{Migliorare} notevolmente \textbf{il design grafico} del programma Updater. Di fatto quello mostrato nel presente documento è solo un'interfaccia prototipale. Visto che l'obiettivo dell'intero progetto è quello di semplificare al cliente la fruizione dei prodotti software aziendali è estremamente importante che il primo prodotto installato dall'utente abbia un impatto positivo sia per l'aspetto grafico sia per l'usabilità.
+				\item \text{Migliorare il design e la struttura del codice già sviluppato} soprattutto nei punti critici indicati nel capitolo~\ref{cap:Architettura}. Eseguire l'opportuno refactoring di queste parti del sistema garantirà che le estensioni future possano essere aggiunte senza l'aggravamento dei costi e della leggibilità dell'intero sistema. 
+			\end{itemize}
+			
+		\section{Future estensioni}
+			Durante lo sviluppo nuove possibili funzionalità sono state individuate. Esse sono:
+			\begin{itemize}
+				\item Implementazione di un'autenticazione nel programma Updater gestendo gli account di ogni cliente (già in parte implementato). Questo consentirebbe una diversa distribuzione dei prodotti software tra i clienti aziendali.
+				\item Gestione centralizzata delle licenze dei prodotti software in uso dall'utente.
+			\end{itemize}
+
+\end{document}

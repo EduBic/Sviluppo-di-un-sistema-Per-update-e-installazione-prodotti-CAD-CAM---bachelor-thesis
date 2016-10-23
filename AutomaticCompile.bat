@@ -1,0 +1,5 @@
+pdflatex RelazioneFinale
+BibTex RelazioneFinale
+makeglossaries RelazioneFinale
+pdflatex RelazioneFinale
+pdflatex RelazioneFinale

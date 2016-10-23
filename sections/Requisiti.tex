@@ -1,0 +1,200 @@
+\documentclass[../RelazioneFinale]{subfiles}
+
+\begin{document}
+
+	\chapter{Analisi}
+	\label{cap:Requisiti}
+		La prima parte del progetto di stage è stata basata sulla definizione dei requisiti software che il prodotto dovrà soddisfare. Alcuni requisiti hanno subito diverse variazioni. Qui di seguito sono elencati solamenti i requisiti nella loro versione finale.
+
+		I requisiti a seguire sono stati classificati per le seguenti tipologie:
+		\begin{itemize}
+			\item Di vincolo;
+			\item Funzionali;
+			\item Di qualità.
+		\end{itemize}
+		I requisiti di tipo funzionale data la loro quantità elevata sono stati suddivisi in due sezioni:
+		\begin{itemize}
+			\item Requisiti funzionali lato client;
+			\item Requisiti funzionali lato server.
+		\end{itemize}		
+		Inoltre sono stati classificati con la seguente codifica: \textbf{R[X][Y]} per facilitarne la consultazione. La codifica deve essere interpretata nel modo seguente:
+		\begin{enumerate}
+			\item \textbf{X} indica la priorità del requisito e può assumere uno dei seguenti valori:
+			\begin{itemize}
+				\item \textbf{Obb} per requisito obbligatorio;
+				\item \textbf{Opz} per requisito opzionale.
+			\end{itemize}
+			\item \textbf{Y} indica il codice gerarchico che identifica un requisito e che è unico.
+		\end{enumerate}	
+
+		\section{Requisiti di vincolo}
+			Gli unici requisiti di vincolo presenti sono:
+			\begin{enumerate}
+				\item Sviluppare il sistema in un ambiente Microsoft Windows;
+				\item Sviluppare il programma lato client compatibile con i sistemi operativi Windows XP, Windows Vista, Windows 8 e Windows 10;
+				\item Sviluppare utilizzando tecnologie Open Source con licenza MIT o Microsoft (licenza aquisita dall'azienda).
+			\end{enumerate}
+		
+		
+		\section{Requisiti funzionali}
+		
+			\subsection{Lato Client}
+			\begin{description}
+			
+				% ListView UIControls
+				\item[RObb1] Il programma deve consentire la visualizzazione dei prodotti software disponibili;
+				\begin{description}
+					\item[RObb1.1] Il programma deve consentire la visualizzazione del nome dei prodotti software;
+					\item[RObb1.2] Il programma deve consentire la visualizzazione di una breve descrizione per ogni prodotto software;
+					\item[RObb1.3] Il programma deve consentire la visualizzazione di un'indicazione se è disponibile un aggiornamento per il prodotto software disponibile;
+					\item[RObb1.4] Il programma deve consentire la visualizzazione filtrata dei prodotti software disponibili;
+					\begin{description}
+						\item[RObb1.4.1] deve consentire di visualizzare tutti i prodotti software;
+						\item[RObb1.4.2] deve consentire di visualizzare i prodotti software installabili;
+						\item[RObb1.4.3] deve consentire di visualizzare i prodotti software con aggiornamento disponibile;
+						\item[RObb1.4.4] deve consentire di visualizzare i prodotti software con il nome più vicino alla stringa inserita dall'utente in un'apposita casella di ricerca;
+					\end{description}
+				\end{description}
+				
+				% InfoView UIControls
+				\item[RObb2] Il programma deve fornire indicazioni più dettagliate per ogni prodotto software;
+					\begin{description}
+						\item[RObb2.1] Il programma deve fornire il nome del prodotto;
+						\item[RObb2.2] Il programma deve fornire una descrizione esaustiva del prodotto;
+						\item[RObb2.3] Il programma deve fornire la data di rilascio del prodotto;
+						\item[RObb2.4] Il programma deve fornire un'indicazione se il prodotto è già installato nella macchina;
+					\end{description}									
+				
+				\item[RObb3] Il programma deve permettere all'utente di eseguire operazioni per ogni prodotto software;
+				\begin{description}
+					\item[RObb3.1] Il programma deve permettere di scaricare il file di installazione del prodotto software nella macchina;
+					\item[RObb3.2] Il programma deve permettere di annullare il download in corso di un prodotto software;
+					\item[RObb3.3] Il programma deve permettere di installare il prodotto software nella macchina;
+					\item[RObb3.4] Il programma deve permettere di scaricare e installare il prodotto software nella macchina;
+					\item[RObb3.5] Il programma deve permettere di reinstallare il prodotto software precedentemente installato;
+					\item[RObb3.6] Il programma deve permettere di scaricare e installare gli aggiornamenti di un prodotto software installato precedentemente;
+				\end{description}
+
+				% settings
+				\item[RObb4] Il programma deve fornire all'utente delle preferenze modificabili dall'utente;
+				\begin{description}
+					\item[RObb4.1] deve fornire all'utente la possibilità di attivare gli avvisi per gli aggiornamenti disponibili per i prodotti software installati;
+					\item[RObb4.2] deve fornire all'utente la possibilità di disattivare gli avvisi per gli aggiornamenti disponibili per i prodotti software installati;
+					\item[RObb4.3] deve fornire all'utente la possibilità di attivare il download automatico degli aggiornamenti disponibili per i prodotti software installati;
+					\item[RObb4.4] deve fornire all'utente la possibilità di disattivare il download automatico degli aggiornamenti disponibili per i prodotti software installati;
+					\item[RObb4.5] deve fornire all'utente la possibilità di attivare il download e l'installazione automatica degli aggiornamenti disponibili per i prodotti software installati;
+					\item[RObb4.6] deve fornire all'utente la possibilità di disattivare il download e l'installazione automatica degli aggiornamenti disponibili per i prodotti software installati;
+					\item[RObb4.7] deve fornire all'utente la possibilità di impostare un'ora  in cui si effettuerà il download e l'installazione automatica degli aggiornamenti disponibili per i prodotti software installati;
+				\end{description}
+
+				% Notify bar icon
+				\item[RObb5] Il programma deve segnalare con un avviso nel caso sia disponibile un aggiornamento o più aggiornamenti per i prodotti software installati;
+				\item[RObb6] Il programma deve segnalare con un avviso nel caso sia disponibile un aggiornamento o più aggiornamenti per i prodotti software installati e questi siano stati scaricati;
+				\item[RObb7] Il programma deve segnalare con un avviso nel caso sia stato scaricato e installato automaticamente un aggiornamento disponibile o più aggiornamenti disponibili per i prodotti software installati;
+				\item[RObb8] Il programma deve segnalare con un avviso nel caso non sia stato possibile reperire informazioni sugli aggiornamenti disponibili o nel caso il download automatico di un aggiornamento non sia riuscito	o nel caso l'installazione automatica di un aggiornamento non sia riuscita;
+				
+				% ListView general
+				\item[RObb9] Il programma deve consentire di poter aggiornare tutti i prodotti software con l'aggiornamento disponibile;
+				\item[RObb10] Il programma deve consentire all'utente di aggiornare la lista di prodotti software per verificare nuovi aggiornamenti disponibili;
+				\item[RObb11] Il programma deve segnalare all'utente se il server che offre il servizio online è raggiungibile;
+				
+				% UpdaterLibrary
+				\item[RObb12] Il sistema deve fornire una libreria software che operi in ambiente client usufruita dal programma;
+				\item[RObb13] La libreria deve fornire diverse funzionalità;
+				
+				% UpdaterService
+				\begin{description}
+					\item[RObb13.1] La libreria deve permettere di effettuare operazioni ad un database remoto tramite servizi web;
+					\begin{description}
+						\item[RObb13.1.1] La libreria deve reperire informazioni sui programmi Salvagnini disponibili online;
+						\item[RObb13.1.2] La libreria deve reperire informazioni su un singolo prodotto software disponibile;
+						\item[RObb13.1.2] La libreria deve reperire informazioni su un insieme di prerequisiti disponibili online;
+						\item[RObb13.1.3] La libreria deve reperire informazioni su un singolo prerequisito disponibile online;
+					\end{description}
+					
+					% productWrapper
+					\item[RObb13.2] La libreria deve permettere di effettuare operazioni sui prodotti software;
+					\begin{description}
+						\item[RObb13.2.1] La libreria deve permettere di scaricare un prodotto software;
+						\item[RObb13.2.2] La libreria deve permettere di installare un prodotto software;
+						\item[RObb13.2.3] La libreria deve permettere di aggiornare un prodotto software;
+						
+						% prerequisite wrapper
+						\item[RObb13.2.4] La libreria deve permettere di scaricare e installare prerequisiti se l'installazione di un prodotto software lo richiede;
+					\end{description}
+					
+					% appRestarter	
+					\item[RObb13.3] La libreria deve fornire la possibilità di riavviare il programma ove ritenuto necessario;
+					
+					% AutoUpdatesControllers
+					\item[RObb13.4] La libreria deve fornire la possibilità di gestire aggiornamenti in modo automatico;
+					\begin{description}
+						\item[RObb13.4.1] La libreria deve permettere il controllo automatico di aggiornamenti disponibili online;
+						\item[RObb13.4.2] La libreria deve permettere il download automatico di aggiornamenti disponibili online;
+						\item[RObb13.4.3] La libreria deve permettere l'installazione automatica di aggiornamenti disponibili online;
+					\end{description}										
+					
+				\end{description}
+				
+				
+			\end{description} % end lista requisiti			
+		
+
+			\subsection{Lato Server}
+			\begin{description}
+				\item[RObb14] Il server deve offrire un servizio di tipo REST
+				\begin{description}
+					\item[RObb14.1] Il servizio deve richiedere l'autenticazione tramite username e password;
+					\item[RObb14.2] Il servizio deve fornire le operazioni di GET, POST, PUT e DELETE per i prodotti software interni al database;
+					\item[RObb14.3] Il servizio deve fornire le operazioni di GET, POST, PUT e DELETE per i prerequisiti software interni al database;
+				\end{description}
+				
+				\item[RObb15] Il server deve offrire un sito web amministrativo;
+				\begin{description}
+					\item[RObb15.1] Il sito web deve offrire una pagina in cui effettuare il login;
+					
+					% products.html
+					\item[RObb15.2] Il sito web deve offrire una pagina in cui sia possibile effettuare operazioni sui prodotti software all'interno del database;
+					\begin{description}
+						\item[RObb15.2.1] La pagina deve fornire una lista di tutti i prodotti all'interno del database e relative informazioni;
+						\item[RObb15.2.2] La pagina deve fornire la possibilità di aggiungere un prodotto software nel database;
+						\item[RObb15.2.3] La pagina deve fornire la possibilità di eliminare un prodotto software nel database;
+						\item[RObb15.2.4] La pagina deve fornire la possibilità di modificare un prodotto software nel database;
+					\end{description}
+					
+					% prerequisite.html
+					\item[RObb15.3] Il sito web deve offrire una pagina in cui sia possibile effettuare operazioni sui prerequisiti software all'interno del database;
+					\begin{description}
+						\item[RObb15.3.1] La pagina deve fornire una lista di tutti i prerequisiti all'interno del database e relative informazioni;
+						\item[RObb15.3.2] La pagina deve fornire la possibilità di aggiungere un prerequisiti software nel database;
+						\item[RObb15.3.3] La pagina deve fornire la possibilità di eliminare un prerequisiti software nel database;
+						\item[RObb15.3.4] La pagina deve fornire la possibilità di modificare un prerequisiti software nel database;
+					\end{description}	
+					
+					% dependencies.html
+					\item[RObb15.4] Il sito deve offrire una pagina in cui sia possibile gestire la relazione tra prodotti software e prerequisiti;
+					\begin{description}
+						\item[RObb15.4.1] La pagina deve fornire la possibilità di selezionare un prodotto software;
+						\item[RObb15.4.2] La pagina deve fornire la possibilità di associare i prerequisiti disponibili nel database al prodotto software selezionato;
+						\item[RObb15.4.3] La pagina deve fornire la possibilità di dissociare i prerequisiti disponibili nel database al prodotto software selezionato;
+					\end{description}								
+					
+				\end{description}								
+				
+				\item[ROpz16] Il sistema di countinuos integration dell'azienda dovrà essere collegato al servizio REST consentendo la PUT automatica dei prodotti software presenti nel database;				
+				
+			\end{description}
+		
+		
+		\section{Requisiti di qualità}
+			Per quanto concerne la qualità è stato espressamente richiesto di sviluppare il sistema nel modo più modulare possibile così da poter favorire il riuso delle componenti. Da ciò si è deciso di sviluppare una libreria di classi incaricate di effettuare la comunicazione con il servizio REST e delle componenti grafiche indipendenti dal programma client.
+			
+			\subsection{Soddisfacimento}
+				Per soddisfare i requisiti di qualità il progetto è scomposto in due parti suddivise a sua volta in piccoli progetti: macro componenti.
+			Inoltre anche se non richiesto, in vista del riuso, molto probabile, del codice da parte di sviluppatori esterni allo sviluppo, l'intero sistema è stato sviluppato cercando di seguire le linee guida riportate sui seguenti libri di testo:
+			\begin{itemize}
+				\item \emph{Clean Code} di \emph{Robert C. Martin}  \cite{martin2009clean};
+				\item \emph{Implementation Patterns} di \emph{Kent Beck} \cite{beck2008implementation}.
+			\end{itemize}		
+
+\end{document}
